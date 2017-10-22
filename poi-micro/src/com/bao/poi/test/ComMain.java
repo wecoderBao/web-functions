@@ -20,22 +20,22 @@ import com.bao.poi.util.ExportExcel;
 public class ComMain {
 	public static void main(String[] args)  
     {  
-        // ²âÊÔÑ§Éú  
+        // æµ‹è¯•å­¦ç”Ÿ  
         ExportExcel<CompanyRefresh> ex = new ExportExcel<CompanyRefresh>();  
         String[] headers =  
-        { "ÇøÓò", "¹«Ë¾Ãû³Æ", "ÁªÏµµç»°", "ÏêÏ¸µØÖ·", "Ë¢ĞÂ´ÎÊı","Ïû·Ñ½ğ¶î" };  
+        { "åŒºåŸŸ", "å…¬å¸åç§°", "è”ç³»ç”µè¯", "è¯¦ç»†åœ°å€", "åˆ·æ–°æ¬¡æ•°","æ¶ˆè´¹é‡‘é¢" };  
         List<CompanyRefresh> dataset = new ArrayList<CompanyRefresh>();  
-        dataset.add(new CompanyRefresh("ºéÉ½Çø", "°®¶ûÑÛ¿ÆÒ½Ôº", "13164618323", "ºéÉ½Çø12ºÅ", "6","600"));  
-        dataset.add(new CompanyRefresh("ºéÉ½Çø", "°®¶ûÑÛ¿ÆÒ½Ôº", "13164618323", "ºéÉ½Çø12ºÅ", "6","600"));  
-        dataset.add(new CompanyRefresh("ºéÉ½Çø", "°®¶ûÑÛ¿ÆÒ½Ôº", "13164618323", "ºéÉ½Çø12ºÅ", "6","600"));  
+        dataset.add(new CompanyRefresh("æ´ªå±±åŒº", "çˆ±å°”çœ¼ç§‘åŒ»é™¢", "13164618323", "æ´ªå±±åŒº12å·", "6","600"));  
+        dataset.add(new CompanyRefresh("æ´ªå±±åŒº", "çˆ±å°”çœ¼ç§‘åŒ»é™¢", "13164618323", "æ´ªå±±åŒº12å·", "6","600"));  
+        dataset.add(new CompanyRefresh("æ´ªå±±åŒº", "çˆ±å°”çœ¼ç§‘åŒ»é™¢", "13164618323", "æ´ªå±±åŒº12å·", "6","600"));  
        
         try  
         {   
             OutputStream out = new FileOutputStream("E://a.xls");   
             ex.exportExcel(headers, dataset, out);  
             out.close();  
-            JOptionPane.showMessageDialog(null, "µ¼³ö³É¹¦!");  
-            System.out.println("excelµ¼³ö³É¹¦£¡");  
+            JOptionPane.showMessageDialog(null, "å¯¼å‡ºæˆåŠŸ!");  
+            System.out.println("excelå¯¼å‡ºæˆåŠŸï¼");  
         } catch (FileNotFoundException e) {  
             e.printStackTrace();  
         } catch (IOException e) {  

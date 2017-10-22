@@ -19,18 +19,18 @@ import com.bao.poi.util.ExportExcel;
 public class Main {
 	public static void main(String[] args)  
     {  
-        // ²âÊÔÑ§Éú  
+        // æµ‹è¯•å­¦ç”Ÿ  
         ExportExcel<Student> ex = new ExportExcel<Student>();  
         String[] headers =  
-        { "Ñ§ºÅ", "ĞÕÃû", "ÄêÁä", "ĞÔ±ğ", "³öÉúÈÕÆÚ" };  
+        { "å­¦å·", "å§“å", "å¹´é¾„", "æ€§åˆ«", "å‡ºç”Ÿæ—¥æœŸ" };  
         List<Student> dataset = new ArrayList<Student>();  
-        dataset.add(new Student(10000001, "ÕÅÈı", 20, true, new Date()));  
-        dataset.add(new Student(20000002, "ÀîËÄ", 24, false, new Date()));  
-        dataset.add(new Student(30000003, "ÍõÎå", 22, true, new Date()));  
-        // ²âÊÔÍ¼Êé  
+        dataset.add(new Student(10000001, "å¼ ä¸‰", 20, true, new Date()));  
+        dataset.add(new Student(20000002, "æå››", 24, false, new Date()));  
+        dataset.add(new Student(30000003, "ç‹äº”", 22, true, new Date()));  
+        // æµ‹è¯•å›¾ä¹¦  
         ExportExcel<Book> ex2 = new ExportExcel<Book>();  
         String[] headers2 =  
-        { "Í¼Êé±àºÅ", "Í¼ÊéÃû³Æ", "Í¼Êé×÷Õß", "Í¼Êé¼Û¸ñ", "Í¼ÊéISBN", "Í¼Êé³ö°æÉç", "·âÃæÍ¼Æ¬" };  
+        { "å›¾ä¹¦ç¼–å·", "å›¾ä¹¦åç§°", "å›¾ä¹¦ä½œè€…", "å›¾ä¹¦ä»·æ ¼", "å›¾ä¹¦ISBN", "å›¾ä¹¦å‡ºç‰ˆç¤¾", "å°é¢å›¾ç‰‡" };  
         List<Book> dataset2 = new ArrayList<Book>();  
         try  
         {  
@@ -42,15 +42,15 @@ public class Main {
                 //  
             }  
             dataset2.add(new Book(1, "jsp", "leno", 300.33f, "1234567",  
-                    "Çå»ª³ö°æÉç", buf));  
-            dataset2.add(new Book(2, "java±à³ÌË¼Ïë", "brucl", 300.33f, "1234567",  
-                    "Ñô¹â³ö°æÉç", buf));  
-            dataset2.add(new Book(3, "DOMÒÕÊõ", "lenotang", 300.33f, "1234567",  
-                    "Çå»ª³ö°æÉç", buf));  
-            dataset2.add(new Book(4, "c++¾­µä", "leno", 400.33f, "1234567",  
-                    "Çå»ª³ö°æÉç", buf));  
-            dataset2.add(new Book(5, "c#ÈëÃÅ", "leno", 300.33f, "1234567",  
-                    "ÌÀ´ºĞã³ö°æÉç", buf));  
+                    "æ¸…åå‡ºç‰ˆç¤¾", buf));  
+            dataset2.add(new Book(2, "javaç¼–ç¨‹æ€æƒ³", "brucl", 300.33f, "1234567",  
+                    "é˜³å…‰å‡ºç‰ˆç¤¾", buf));  
+            dataset2.add(new Book(3, "DOMè‰ºæœ¯", "lenotang", 300.33f, "1234567",  
+                    "æ¸…åå‡ºç‰ˆç¤¾", buf));  
+            dataset2.add(new Book(4, "c++ç»å…¸", "leno", 400.33f, "1234567",  
+                    "æ¸…åå‡ºç‰ˆç¤¾", buf));  
+            dataset2.add(new Book(5, "c#å…¥é—¨", "leno", 300.33f, "1234567",  
+                    "æ±¤æ˜¥ç§€å‡ºç‰ˆç¤¾", buf));  
   
             OutputStream out = new FileOutputStream("E://a.xls");  
             OutputStream out2 = new FileOutputStream("E://b.xls");  
@@ -58,8 +58,8 @@ public class Main {
             ex2.exportExcel(headers2, dataset2, out2);  
             out.close();  
             out2.close();  
-            JOptionPane.showMessageDialog(null, "µ¼³ö³É¹¦!");  
-            System.out.println("excelµ¼³ö³É¹¦£¡");  
+            JOptionPane.showMessageDialog(null, "å¯¼å‡ºæˆåŠŸ!");  
+            System.out.println("excelå¯¼å‡ºæˆåŠŸï¼");  
         } catch (FileNotFoundException e) {  
             e.printStackTrace();  
         } catch (IOException e) {  
