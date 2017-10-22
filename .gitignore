@@ -2,3 +2,7 @@
 #####poi-micro
 poi-micro/WebContent/WEB-INF/classes
 poi-micro/.settings/
+
+####poi-web
+poi-web/WebContent/WEB-INF/classes
+poi-web/.settings/
