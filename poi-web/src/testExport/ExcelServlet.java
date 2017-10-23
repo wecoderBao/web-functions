@@ -50,10 +50,11 @@ public class ExcelServlet extends HttpServlet {
 			response.reset();
 			// 设置response的Header
 			response.addHeader("Content-Disposition", "attachment;filename="
-					+ new String(filename.getBytes(),"ISO-8859-1"));
+					+ new String(filename.getBytes(),"ISO-8859-1"));//设置下载后的文件名
 			response.addHeader("Content-Length", "" + file.length());
 			OutputStream toClient = new BufferedOutputStream(
 					response.getOutputStream());
+			//设置文件类型vnd.ms-excel对应.xls文件类型
 			response.setContentType("application/vnd.ms-excel;charset=gb2312");
 			toClient.write(buffer);
 			toClient.flush();
