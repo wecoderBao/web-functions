@@ -6,3 +6,7 @@ poi-micro/.settings/
 ####poi-web
 poi-web/WebContent/WEB-INF/classes
 poi-web/.settings/
+
+####web-role-admin
+web-role-admin/WebContent/WEB-INF/classes
+web-role-admin/.settings/
