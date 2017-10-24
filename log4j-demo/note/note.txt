@@ -1,0 +1,3 @@
+log4j是日志功能实现
+
+commons-logging是提供日志功能统一接口
