@@ -1,6 +1,2 @@
 
-2017-10-24 09:23:34,571INFO [com.bao.log.demo.Test.one(Test.java:11)] into one method
-
-2017-10-24 09:23:34,574ERROR [com.bao.log.demo.Test.one(Test.java:15)] / by zero
-
-2017-10-24 09:23:34,574INFO [com.bao.log.demo.Test.one(Test.java:17)] out one method
+2017-10-25 09:19:37,951ERROR [com.bao.log.demo.Test.one(Test.java:16)] / by zero
