@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Server port="8005" shutdown="SHUTDOWN">
+<!-- 
+	1.server元素代表整个Catalina，server容器是Tomcat实例的顶层元素。
+	server元素可以包含一个或者多个service元素。
+	2. port 指定Tomcat服务器监听shutdown命令的端口。终止Tomcat服务运行时，必须在Tomcat所在
+	的机器上发出showdown命令，该属性是必须的。
+	3. shutdown 指定终止Tomcat服务器运行时，发给Tomcat服务器的shutdown监听端口的字符串，
+	该属性是必须设定的。
+ -->
+  <Listener className="org.apache.catalina.startup.VersionLoggerListener" />
+  <!-- Security listener. Documentation at /docs/config/listeners.html
+  <Listener className="org.apache.catalina.security.SecurityListener" />
+  -->
+  <!--APR library loader. Documentation at /docs/apr.html -->
+  <Listener className="org.apache.catalina.core.AprLifecycleListener" SSLEngine="on" />
+  <!--Initialize Jasper prior to webapps are loaded. Documentation at /docs/jasper-howto.html -->
+  <Listener className="org.apache.catalina.core.JasperListener" />
+  <!-- Prevent memory leaks due to use of particular java/javax APIs-->
+  <Listener className="org.apache.catalina.core.JreMemoryLeakPreventionListener" />
+  <Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener" />
+  <Listener className="org.apache.catalina.core.ThreadLocalLeakPreventionListener" />
+
+  <!-- Global JNDI resources
+       Documentation at /docs/jndi-resources-howto.html
+  -->
+  <GlobalNamingResources>
+    <!-- Editable user database that can also be used by
+         UserDatabaseRealm to authenticate users
+    -->
+    <Resource name="UserDatabase" auth="Container"
+              type="org.apache.catalina.UserDatabase"
+              description="User database that can be updated and saved"
+              factory="org.apache.catalina.users.MemoryUserDatabaseFactory"
+              pathname="conf/tomcat-users.xml" />
+  </GlobalNamingResources>
+
+  <Service name="Catalina">
+	<!-- 
+	1. 包含一个Engine元素，以及一个或多个connector元素，这些connector元素共享一个engine
+	元素。
+	2. name 定义service的名字
+	 -->
+    <Connector port="8080" protocol="HTTP/1.1"
+               connectionTimeout="20000"  URIEncoding="UTF-8"
+               redirectPort="8443" />
+     <!-- 
+     1. connector元素代表与客户程序实际交互的组件，它负责接收客户的请求，以及
+     向客户返回响应的结果。
+     2. 上面的connector定义了一个http connector，他通过8080端口接收http请求
+     3. 下面的connector定义一个jk connector 通过8009端口接收由其他HTTP服务器，如
+     Apache服务器转发过来的客户请求。
+      -->
+    <Connector port="8009" protocol="AJP/1.3" redirectPort="8443" />
+
+    <Engine name="Catalina" defaultHost="localhost">
+	<!-- 
+	1. 每个service元素只能包括一个engine元素。engine元素处理再同一个service中所有
+	connector元素接收到的客户请求。
+	2. name 定义engine的名字
+	 -->
+      <Realm className="org.apache.catalina.realm.LockOutRealm">
+        
+        <Realm className="org.apache.catalina.realm.UserDatabaseRealm"
+               resourceName="UserDatabase"/>
+      </Realm>
+
+      <Host name="localhost"  appBase=""
+            unpackWARs="true" autoDeploy="true">
+		<!-- 
+		1.appBase 指定虚拟主机的目录，可以指定绝对目录，也可以指定相对于<CATALINA_HOME>的相对目录。
+		如果此项没有指定，默认值为<CATALINA_HOME>/webapps
+		2.unpackWARS 如果此项设为true，表示将把web应用的war文件先展开为开放目录结构后再运行。如果设置为false
+		将直接运行war文件。
+		3.autoDeploy 如果此项设为true，表示当Tomcat服务器处于运行状态时，能够检测appBase下的文件，如果
+		有新的web应用加入进来，会自动发布这个web应用。
+		4.alias 虚拟主机的别名
+		 -->
+        
+        <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
+               prefix="localhost_access_log." suffix=".txt"
+               pattern="%h %l %u %t &quot;%r&quot; %s %b" />
+               <Context path="/" docBase="../youyamvc/youyamvc-web/target/youyamvc-web" reloadable="false" />
+               <!-- 
+               1.path 指定访问该web应用的url入口
+               2.docBase 指定web应用的文件路径。可以指定绝对路径，也可以给定相对于Host的appBase属性
+               的相对路径。如果web应用采用开放目录结构，那就指定web应用的根目录；如果web应用是个war文件
+               那就指定war文件的路径。
+               3.reloadable 如果这个属性设为true，Tomcat服务器再运行状态下会监视再WEB-INF/class和
+               WEB-INF/lib目录下class文件的改动。如果检测到有文件被更新，服务器会自动重新加载web应用。
+               4.cookies 指定是否通过cookie来支持session，默认true
+               5.useNaming 指定是否支持JNDI，默认为true
+               
+                -->
+      </Host>
+    </Engine>
+  </Service>
+</Server>
