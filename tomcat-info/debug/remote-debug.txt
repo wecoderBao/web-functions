@@ -1,0 +1,16 @@
+
+1.如何开启Tomcat远程调试功能
+
+再启动tomcat时开启jpda服务即可。
+
+jpda(java platform debugger architecture)即java平台调试体系结构的缩写。
+
+启动jpda命令：./catalina.sh jpda start
+
+默认情况下，远程调试的默认端口为8000，可以通过JPDA_ADDRESS进行配置，指定自定义的端口，另外，还有两个可以配置的参数
+JPDA_TRANSPORT：即调试器和虚拟机之间数据的传输方式，默认值是dt_socket
+JPDA_SUSPEND：即JVM启动后是否立即挂起，默认是n
+可以在catalina.sh中进行配置：
+JPDA_TRANSPORT=dt_socket  
+JPDA_ADDRESS=5005  
+JPAD_SUSPEND=n
