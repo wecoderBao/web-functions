@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bao.springboot.mapper.TYaoMapper" >
+  <resultMap id="BaseResultMap" type="com.bao.springboot.pojo.TYao" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="gua_code" property="guaCode" jdbcType="INTEGER" />
+    <result column="yao_ci" property="yaoCi" jdbcType="VARCHAR" />
+    <result column="yao_ci_name" property="yaoCiName" jdbcType="VARCHAR" />
+    <result column="yao_ci_desc" property="yaoCiDesc" jdbcType="VARCHAR" />
+    <result column="yao_ci_xiang" property="yaoCiXiang" jdbcType="VARCHAR" />
+    <result column="yao_ci_xiang_desc" property="yaoCiXiangDesc" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, gua_code, yao_ci, yao_ci_name, yao_ci_desc, yao_ci_xiang, yao_ci_xiang_desc
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.bao.springboot.pojo.TYaoExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_yao
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_yao
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_yao
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.bao.springboot.pojo.TYaoExample" >
+    delete from t_yao
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.bao.springboot.pojo.TYao" >
+    insert into t_yao (id, gua_code, yao_ci, 
+      yao_ci_name, yao_ci_desc, yao_ci_xiang, 
+      yao_ci_xiang_desc)
+    values (#{id,jdbcType=INTEGER}, #{guaCode,jdbcType=INTEGER}, #{yaoCi,jdbcType=VARCHAR}, 
+      #{yaoCiName,jdbcType=VARCHAR}, #{yaoCiDesc,jdbcType=VARCHAR}, #{yaoCiXiang,jdbcType=VARCHAR}, 
+      #{yaoCiXiangDesc,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bao.springboot.pojo.TYao" >
+    insert into t_yao
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="guaCode != null" >
+        gua_code,
+      </if>
+      <if test="yaoCi != null" >
+        yao_ci,
+      </if>
+      <if test="yaoCiName != null" >
+        yao_ci_name,
+      </if>
+      <if test="yaoCiDesc != null" >
+        yao_ci_desc,
+      </if>
+      <if test="yaoCiXiang != null" >
+        yao_ci_xiang,
+      </if>
+      <if test="yaoCiXiangDesc != null" >
+        yao_ci_xiang_desc,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="guaCode != null" >
+        #{guaCode,jdbcType=INTEGER},
+      </if>
+      <if test="yaoCi != null" >
+        #{yaoCi,jdbcType=VARCHAR},
+      </if>
+      <if test="yaoCiName != null" >
+        #{yaoCiName,jdbcType=VARCHAR},
+      </if>
+      <if test="yaoCiDesc != null" >
+        #{yaoCiDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="yaoCiXiang != null" >
+        #{yaoCiXiang,jdbcType=VARCHAR},
+      </if>
+      <if test="yaoCiXiangDesc != null" >
+        #{yaoCiXiangDesc,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.bao.springboot.pojo.TYaoExample" resultType="java.lang.Integer" >
+    select count(*) from t_yao
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update t_yao
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.guaCode != null" >
+        gua_code = #{record.guaCode,jdbcType=INTEGER},
+      </if>
+      <if test="record.yaoCi != null" >
+        yao_ci = #{record.yaoCi,jdbcType=VARCHAR},
+      </if>
+      <if test="record.yaoCiName != null" >
+        yao_ci_name = #{record.yaoCiName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.yaoCiDesc != null" >
+        yao_ci_desc = #{record.yaoCiDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.yaoCiXiang != null" >
+        yao_ci_xiang = #{record.yaoCiXiang,jdbcType=VARCHAR},
+      </if>
+      <if test="record.yaoCiXiangDesc != null" >
+        yao_ci_xiang_desc = #{record.yaoCiXiangDesc,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update t_yao
+    set id = #{record.id,jdbcType=INTEGER},
+      gua_code = #{record.guaCode,jdbcType=INTEGER},
+      yao_ci = #{record.yaoCi,jdbcType=VARCHAR},
+      yao_ci_name = #{record.yaoCiName,jdbcType=VARCHAR},
+      yao_ci_desc = #{record.yaoCiDesc,jdbcType=VARCHAR},
+      yao_ci_xiang = #{record.yaoCiXiang,jdbcType=VARCHAR},
+      yao_ci_xiang_desc = #{record.yaoCiXiangDesc,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bao.springboot.pojo.TYao" >
+    update t_yao
+    <set >
+      <if test="guaCode != null" >
+        gua_code = #{guaCode,jdbcType=INTEGER},
+      </if>
+      <if test="yaoCi != null" >
+        yao_ci = #{yaoCi,jdbcType=VARCHAR},
+      </if>
+      <if test="yaoCiName != null" >
+        yao_ci_name = #{yaoCiName,jdbcType=VARCHAR},
+      </if>
+      <if test="yaoCiDesc != null" >
+        yao_ci_desc = #{yaoCiDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="yaoCiXiang != null" >
+        yao_ci_xiang = #{yaoCiXiang,jdbcType=VARCHAR},
+      </if>
+      <if test="yaoCiXiangDesc != null" >
+        yao_ci_xiang_desc = #{yaoCiXiangDesc,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bao.springboot.pojo.TYao" >
+    update t_yao
+    set gua_code = #{guaCode,jdbcType=INTEGER},
+      yao_ci = #{yaoCi,jdbcType=VARCHAR},
+      yao_ci_name = #{yaoCiName,jdbcType=VARCHAR},
+      yao_ci_desc = #{yaoCiDesc,jdbcType=VARCHAR},
+      yao_ci_xiang = #{yaoCiXiang,jdbcType=VARCHAR},
+      yao_ci_xiang_desc = #{yaoCiXiangDesc,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
