@@ -7,11 +7,11 @@ create table t_gua(
 	code int(10) unique comment '卦代码',
 	gua_ci varchar(20) comment '卦辞',
 	gua_name varchar(20) comment '卦名称',
-	gua_model varchar(50) comment '卦辞原文'
+	gua_model varchar(50) comment '卦辞原文',
 	gua_ci_desc varchar(200) comment '卦辞白话',
 	gua_ci_xiang varchar(50) comment '卦辞象曰',
 	gua_ci_xiang_desc varchar(200) comment '卦辞象白话'
-);
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
 drop table if exists t_yao;
 create table t_yao(
 	id int(10) primary key auto_increment,
@@ -21,4 +21,4 @@ create table t_yao(
 	yao_ci_desc varchar(200) comment '爻辞白话',
 	yao_ci_xiang varchar(50) comment '爻辞象',
 	yao_ci_xiang_desc varchar(200) comment '爻辞象白话'
-)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
