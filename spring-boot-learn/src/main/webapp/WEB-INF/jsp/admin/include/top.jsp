@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
-<a href="http://www.magicalcoder.com" class="logo">
+<a href="#" class="logo">
     <!-- Add the class icon to your logo image or logo icon to add the margining -->
-    MagicalCoder
+    dev
 </a>
 <!-- Header Navbar: style can be found in header.less -->
 <nav class="navbar navbar-static-top" role="navigation">

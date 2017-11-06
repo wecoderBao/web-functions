@@ -25,9 +25,9 @@
 					gua详情 <small></small>
 				</h1>
 				<ol class="breadcrumb">
-					<li><a href="admin/index"><i class="fa fa-dashboard"></i>
+					<li><a href="index"><i class="fa fa-dashboard"></i>
 							主页</a></li>
-					<li><a href="admin/prize/list">gua列表</a></li>
+					<li><a href="guaList">gua列表</a></li>
 					<li class="active">gua详情</li>
 				</ol>
 			</section>
@@ -36,7 +36,7 @@
 					<div class="col-md-12">
 						<div class="box box-primary">
 							<form class="form-horizontal" role="form" id="form"
-								action="admin/prize/save" method="post">
+								action="guaSave" method="post">
 								<div class="box-header">
 									<h3 class="box-title">
 										<c:choose>

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
-<a href="http://www.magicalcoder.com" class="logo">
-    MagicalCoder
+<a href="#" class="logo">
+    dev
 </a>
 <nav class="navbar navbar-static-top" role="navigation">
     <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
