@@ -22,12 +22,12 @@ import com.bao.springboot.service.module.ModuleService;
 public class AdminModuleListController {
 	private final String moduleName = "module";
 	private final String allSqlFieldStr = ",id,module_name,module_url,module_category_id,sort_num,module_title,target,if_show,";
-	@Resource
+//	@Resource
 	private ModuleCategoryService moduleCategoryService;
 
-	@Resource
+//	@Resource
 	private LogAdminOperateService logAdminOperateService;
-	@Resource
+//	@Resource
 	private ModuleService moduleService;
 
 	// 列表页

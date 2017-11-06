@@ -7,9 +7,9 @@ spring:
       prefix: /WEB-INF/jsp/admin/
       suffix: .jsp
   datasource:
-        url: jdbc:mysql://localhost:3306/up_content?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false
-        username: game
-        password: 123456
+        url: jdbc:mysql://localhost:3306/oldCulture?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false
+        username: root
+        password: root
         #连接池的配置信息
         initialSize: 10
         minIdle: 10
