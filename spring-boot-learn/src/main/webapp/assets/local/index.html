@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>爱玩大富翁</title>
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="applicable-device" content="mobile">
+    <meta http-equiv="Cache-Control" content="no-transfrom">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!--viewport 设置，如果页面实际情况不允许缩放请加上,user-scalable=no-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="dns-prefetch" href="https://nie.res.netease.com">
+    <!--<link rel="stylesheet" href="https://nie.res.netease.com/comm/css/base.css">-->
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script src="http://img5.cache.netease.com/game/img15/index0031/js/iPlayAppClient-v1.2.2.js"></script>
+    <script src="http://img5.cache.netease.com/game/img15/index0031/js/clientAppTools.js"></script>
+</head>
+
+<body>
+<div id="forhorview">不建议横屏浏览~</div>
+<div id="app">
+    <!--加载页面-->
+    <div class="p-load page-full" v-show="loading" v-cloak="">
+        <img class="loadbg" src="img/bg1.jpg">
+        <div class="load-tip t-center">
+            <img src="img/loading.png">
+            <div v-html="loadTip"></div>
+        </div>
+    </div>
+    <template v-show="!loading">
+        <!--首页-->
+        <div class="page-full page1 hide">
+            <div class="topbar clearfix" v-if="!isApp">
+                <img class="fl" src="img/logo.png" alt="logo">
+                <div class="btn_open fr">立即打开</div>
+            </div>
+            <div class="slogan" :class="[isApp ? 'pt11' : 'pt6']"><img src="img/slogan.png"></div>
+            <div class="tip1" v-if="isApp">※ 本活动仅爱玩2.1.3以及以上版本可参与</div>
+        </div>
+        <!--所有作品-->
+        <div class="page2 hide">
+            <div class="unit">
+                <img src="img/p1.jpg">
+                <div class="vote">3333</div>
+            </div>
+
+            <div class="tip3">
+                <div class="t-cont nomore">没有更多作品了，<span class="reload_list">点此刷新</span></div>
+            </div>
+
+        </div>
+        <!--上传作品-->
+        <div class="page3 ">
+            <div class="u-tit">{{ userInfo.auditStatus | checkResult }}</div>
+            <div class="upload_wrap ">
+                <div class="select_file" @click="selectPic">
+                    <template v-if="!userInfo.uploadFileUrl">
+                        <div class="pt75" v-show="!fileUploading">
+                            <div class="camera"></div>
+                            <div class="select_tip">+点此从相册添加图片</div>
+                            <div class="u-tip">* 请上传不超过10MB的PNG或JPG图片</div>
+                        </div>
+                        <div class="uploading " v-show="fileUploading">
+                            <div class="center mt8">正在上传...</div>
+                            <div class="process"><i :style="'right:' + process + '%' "></i></div>
+                        </div>
+                    </template>
+                    <template v-else="">
+                        <img class="w100" :src="userInfo.uploadFileUrl">
+                    </template>
+                </div>
+                <div class="input_w input_tit">
+                    <input type="text" id="title" maxlength="15" placeholder="给作品取个名字吧"><span>{{ titleLen }}/15</span>
+                </div>
+                <div class="input_w input_qq"><input type="text" id="qq" placeholder="您的QQ号码，便于中奖后第一时间联系您"></div>
+                <div class="btn_join">确认参赛</div>
+                <div class="tip3 mt4">
+                    <div class="t-cont">* 提交作品即表明您已同意 <span>活动规则</span></div>
+                </div>
+            </div>
+            <div class=" upload_res uploaded pb14 hide">
+                <div>
+                    <img :src="userInfo.uploadFileUrl">
+                </div>
+                <div class="tit">{{ userInfo.title }}</div>
+                <div class="tip3">
+                    <div class="t-cont">* 我们最晚会在12小时内完成审核，敬请保持关注</div>
+                </div>
+            </div>
+            <div class="upload_res img-pass pb14 hide">
+                <div>
+                    <img class="w100" :src="userInfo.uploadFileUrl">
+                </div>
+                <div class="tit">{{ userInfo.title }}</div>
+                <div class="vote_info clearfix">
+                    <div class="vote_number fl">票数：<span>{{ userInfo.receiveZanCount }}</span></div>
+                    <div class="rank fr">排名：<span>{{ userInfo.myRank }}</span></div>
+                </div>
+                <div class="btn_share">分享给好友拉票</div>
+            </div>
+            <div class="upload_res refuse pb14 hide">
+                <div class="relative">
+                    <img class="w100" :src="userInfo.uploadFileUrl">
+                    <div class="refuse_mask">
+                        <img class="t-center" src="img/refuse.png">
+                    </div>
+                </div>
+                <div class="tit">{{ userInfo.title }}</div>
+                <div class="tip3">
+                    <div class="t-cont">退回原因：<span> iuiu fyi </span></div>
+                </div>
+            </div>
+        </div>
+        <!--作品详情-->
+        <div class="page4 hide">
+            <div class="btn-group clearfix">
+                <div class="showAll fl">查看所有作品</div>
+                <div class="share2 fl">分享</div>
+                <div class="page_number fr">1/15</div>
+            </div>
+            <div class="imgCont">
+                <img :src="showImg.uploadFileUrl">
+                <div class="prev"></div>
+                <div class="next"></div>
+            </div>
+            <div class="img_info">
+                <div class="s-tit">{{ showImg.title  }}</div>
+                <div class="clearfix author">
+                    <div class="fl">作者：{{ showImg.nickname  }}</div>
+                    <div class="fr img_zan">{{ showImg.receiveZanCount }}</div>
+                </div>
+            </div>
+
+        </div>
+        <div class="page5 hide">
+
+        </div>
+        <div class="nav nav1 nav2  clearfix">
+            <div class="btn1">告白作品展</div>
+            <div class="btn1">告白作品展</div>
+            <div class="btn2"><img src="img/btnrule.png"></div>
+        </div>
+    </template>
+    <transition name="fade">
+        <div class="c-tip t-center" v-show="tipStatus">{{ tipText }}</div>
+    </transition>
+
+    <input class="hide" type="file" id="imgFile" accept="image/*" multiple="multiple">
+</div>
+
+
+<script charset="utf-8" type="text/javascript" src="https://nie.res.netease.com/comm/js/zepto(mixNIE).last.js"></script>
+<script charset="utf-8" type="text/javascript" src="js/lib/vue.min.js"></script>
+<script charset="utf-8" type="text/javascript" src="js/app/common.js"></script>
+<script charset="utf-8" type="text/javascript" src="js/app/client.js"></script>
+<script charset="utf-8" type="text/javascript" src="js/app/index.js"></script>
+<!--统计代码-->
+<script language="JavaScript" src="http://analytics.ws.126.net/log.js" type="text/javascript"></script>
+<script src="http://analytics.163.com/ntes.js" type="text/javascript"></script>
+<script language="javascript" type="text/javascript">
+    _ntes_nacc = "game"; //站点ID。
+    neteaseTracker();
+</script>
+<!-- big data statistics -->
+<!-- big data analysis -->
+<script src="http://img1.cache.netease.com/f2e/products/analysis/js/analysis.350ctAoOoFtN.12.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+*{margin:0px;}
+.modelLayer{position:absolute;top:0;left:0;background:#000;filter:alpha(opacity=40);-moz-opacity:0.4;-khtml-opacity:0.4;opacity:0.4;z-index:8000;}
+.modelLayer .modelLayerIf{position:absolute;top:0;background:#000;left:0;width:100%;height:100%;z-index:-1;} /* if IE6 */
+.alertLayer{position:absolute;z-index:9000;padding:5px;overflow:hidden;*zoom:1;}
+.alertLayer .alertCons{background:#fff;width:100%;position:relative;z-index:9001;height:100%;}
+.alertLayer .alertTit{height:30px;line-height:30px;padding-left:20px;background:#F3F3F3;border-bottom:1px solid #ddd;font-size:13px;cursor:move;}
+.alertLayer .alertClose{position:absolute;top:5px;right:10px;cursor:pointer;}
+.alertLayer .alertContent{padding:25px;}
+.alertLayer .alertBtnDiv{position: absolute; bottom: 0;right:0px;}
+.alertLayer .bg{background:#000;width:1000px;height:1000px;position:absolute;z-index:0;top:0px;left:0px;filter:alpha(opacity=20);-moz-opacity:0.2; -khtml-opacity:0.2;opacity:0.2;}

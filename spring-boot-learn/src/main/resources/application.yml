@@ -1,4 +1,9 @@
 spring:
+  profiles:
+    active: dev
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.jdbc.Driver  
   redis:
     host: localhost
     port: 6379
@@ -7,3 +12,9 @@ spring:
     #  min-idle:1
       # max-active:1000
       # max-wait:-1
+    
+      
+# Mybatis配置
+mybatis:
+    mapperLocations: classpath:com/bao/springboot/mapper/*.xml
+    configLocation: classpath:mybatis-config.xml

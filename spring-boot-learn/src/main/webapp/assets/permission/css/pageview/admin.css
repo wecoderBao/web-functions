@@ -1,0 +1,60 @@
+@import url(../base/base.css);
+/*-- ManagerFrame --*/
+#ManagerIndex{background: #323d6e;}
+.frameTopDiv,.frameTop{height:60px;}
+.frameLeftDiv{width: 212px;background:#fff;overflow-y:auto;height:auto;}
+.frameMainDiv{top:60px;left:217px;background:#fff;margin-left:5px;height:auto;}
+.frameMain,.frameleft{height:100%;overflow-y:auto;}
+#FrameTop{background: url(../../img/admin/header_bg.gif) repeat-x;}
+.logo{float: left;margin:10px 0 0 10px;width:219px;height:35px;text-indent:-9999px;background:url(../../img/admin/GN-Soft.png) no-repeat;_background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale,src="../../img/admin/GN-Soft.png");}
+/*-- basic --*/
+
+
+/*-- common --*/
+body{font:12px/1.5 '微软雅黑','Arial','宋体';}
+.common-wrap{padding:0 5px 5px 5px;}/*内容页面总框架*/
+
+.common-chead{padding:10px;border-bottom:1px dotted #ccc;margin-bottom:15px;}/*内容页面头部*/
+
+.common-inpbtn{*zoom:1;display:inline-block;padding:3px 8px;*line-height:20px;*padding:1px 3px;}/*通用表单按钮样式*/
+
+.common-horizontal{border:1px dotted #A9D1DE;background:#E4EDF2;padding:10px;margin-bottom:15px;overflow:hidden;*zoom:1;}/*表单横列排版*/
+	.common-horizontal .horizontal-label{float:left;display:inline;margin-right:15px;margin-bottom:15px;}
+	
+.common-btnarea{*zoom:1;clear:both;border-top:1px solid #A9D1DE;padding-top:10px;}/*通用表单sub按钮*/
+	.common-btnarea .btnarea-label{float:left;display:inline;margin-right:15px;}
+
+.common-tabel{width:100%;border-collapse: collapse;border:1px solid #5FAAC2;}/*通用表格样式*/
+.common-tabel td,.common-tabel th{border:1px solid #5FAAC2;padding:5px;}
+.common-tabel .eventr{background:#E6E9EB;}
+.common-tabel .oddtr{background:#F0F4F5;}
+.common-tabel .hovertr{background:#BAD2E0;}
+
+/*-- login.jsp --*/
+.login body{color:#adc9da;font:12px/1.5 '微软雅黑','Arial','宋体';background:#152753 url(../../img/admin/login-bg.png) repeat-x;}
+.login .wrap{width:100%;height:613px;background:url(../../img/admin/login.png) no-repeat center top;}
+.login .form{position:absolute;left:50%;margin-left:-40px;top:320px;width:285px;height:120px;}
+.login .panel-l{float:left;width:170px;}
+.login .panel-r{float:right;width:82px;}
+.login .panel-inp{height:15px;width:98px;background:#87adbf;padding:2px 5px;border:1px solid #153966;outline:none;color:#020d29;}
+.login .panel-sub{border:none;width:57px;height:20px;background:url(../../img/admin/login-btn.png);color:#adc9da;cursor:pointer;}
+.login .panel-label{display:block;margin-top:15px;margin-left:8px;}
+.login .panel-sublabel{display:block;margin-top:30px;}
+.login .err{*zoom:1;padding:20px 0 1px 28px;padding-bottom:1px;font-size:14px;font-weight:bold;color:#fff;background:url(../../img/admin/icon/err-small.png) no-repeat 7px 21px;_background:none;_padding-left:8px;/*if ie6*/}
+
+
+/*-- plugin --*/
+.modelLayer{position:absolute;top:0;left:0;background:#000;filter:alpha(opacity=40);-moz-opacity:0.4;-khtml-opacity:0.4;opacity:0.4;z-index:8000;}
+.modelLayer .modelLayerIf{position:absolute;top:0;background:#000;left:0;width:100%;height:100%;z-index:-1;} /* if IE6 */
+.alertLayer{position:absolute;z-index:9000;padding:5px;overflow:hidden;*zoom:1;}
+.alertLayer .alertCons{background:#fff;width:100%;position:relative;z-index:9001;height:100%;}
+.alertLayer .alertTit{height:30px;line-height:30px;padding-left:20px;background:#F3F3F3;border-bottom:1px solid #ddd;font-size:13px;cursor:move;}
+.alertLayer .alertClose{position:absolute;top:5px;right:10px;cursor:pointer;}
+.alertLayer .alertContent{padding:25px;}
+.alertLayer .alertBtnDiv{text-align:center;}
+.alertLayer .bg{background:#000;width:1000px;height:1000px;position:absolute;z-index:0;top:0px;left:0px;filter:alpha(opacity=20);-moz-opacity:0.2; -khtml-opacity:0.2;opacity:0.2;}
+
+
+
+
+

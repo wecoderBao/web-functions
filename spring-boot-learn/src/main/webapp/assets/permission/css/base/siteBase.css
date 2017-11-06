@@ -1,0 +1,32 @@
+/*------------------- 
+Copyright(c) Kadang.Com Inc All rights reserved 2012/07/23  by 希子
+-------------------*/
+@import url(base.css);
+/*--- Common Style Base ---*/
+    body{background:#fff;color:#333;font:12px/1.5 '微软雅黑','Arial','宋体';}
+    input,select,textarea{color:#666;} 
+    .k_w950{width:950px;margin:0 auto;}
+/*--- font type setting ---*/
+	.k_c000{color:#000;}  /* 黑色 */
+	.k_cf00{color:#f00;}  /* 红色 */
+	.k_cb00{color:#b00;}  /* 暗红色 */
+	.k_cd00{color:#d00;}  /* 亮红色 */
+	.k_c069{color:#069;}  /* 深蓝色 */
+	.k_c666{color:#666;}  /* 灰色 */
+	.k_c999{color:#999;}  /* 浅灰色 */
+/*--- link type setting ---*/
+	a:link,a:visited{color:#333;text-decoration:none;}
+	a:hover,a:active{color:#b00;}
+	.k_acblue:link,.k_acblue:hover,.k_acblue:visited{color: #00b4ff;}
+	.k_acbk:link,.k_acbk:hover,.k_acbk:visited{color: #000;}
+/*--- border type setting ---*/
+	.k_bdlr568{border-left:1px solid #d5d6d8;border-right:1px solid #d5d6d8;}
+	.k_bdb568{border-bottom:1px solid #d5d6d8;}
+	.k_bdr568{border-right:1px solid #d5d6d8;}
+	.k_bd568{border:1px solid #d5d6d8;}
+
+	.k_bgeee{background:#eee;}
+	.k_w950{width:950px;margin:0 auto;}
+/*--- common sprites ---*/
+	.k_spes{background:url(../../images/com_sprites.png) no-repeat;}
+
