@@ -24,7 +24,8 @@
 				<h1>
 					gua列表
 					<c:if test="${ 1==1}">
-						<a class="btn btn-app" href="/guaDetail"><i class="fa fa-edit"></i>新增</a>
+						<a class="btn btn-app" href="/guaDetail?id=-1"><i
+							class="fa fa-edit"></i>新增</a>
 					</c:if>
 				</h1>
 				<ol class="breadcrumb">
@@ -104,7 +105,7 @@
 										<c:forEach items="${guaList}" var="gua" varStatus="status">
 											<tr>
 												<td></td>
-												<td align="center">${status.index+1}</td>		
+												<td align="center">${status.index+1}</td>
 												<td align="center">${gua.code}</td>
 												<td align="center">${gua.guaCi}</td>
 												<td align="center">${gua.guaName}</td>
@@ -112,9 +113,10 @@
 												<td align="center">${gua.guaCiDesc}</td>
 												<td align="center">${gua.guaCiXiang}</td>
 												<td align="center">${gua.guaCiXiangDesc}</td>
-												<td><a class="btn btn-sm btn-info" href="#">编辑</a> <a
+												<td><a class="btn btn-sm btn-info"
+													href="/guaDetail?id=${gua.id}">编辑</a> <a
 													class="btn btn-sm btn-danger" href="javascript:{}"
-													onclick="deleteItem('prize','33')">删除</a></td>
+													onclick="deleteGua(${gua.id})">删除</a></td>
 											</tr>
 										</c:forEach>
 
@@ -137,6 +139,15 @@
 	<script src="assets/admin/app/prize/prizePaging.js"
 		type="text/javascript"></script>
 	<script type="text/javascript">
+		function deleteGua(id){
+			if(!confirm("确定要删除？")){
+		        return
+		    }
+			var url = "/guaDelete?id="+id;
+			$.get(url,function(data){
+				window.location.href="/guaList";
+			});
+		}
 		function resetDefaultValue() {
 			getItemPage()
 			initOrderBy()

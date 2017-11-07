@@ -56,7 +56,7 @@
 										<div class="col-sm-3 input-select">
 											 <input
 												type="text" class="form-control" name="code"
-												placeholder="填写gua代号">
+												placeholder="填写gua代号" value="${gua.code }"/>
 										</div>
 										<label class="col-sm-2 control-label"> <c:if
 												test="${ gua.code!=null}">
@@ -153,7 +153,7 @@
 											class="btn btn-primary">保存</button>
 									</c:if>
 									<button type="button"
-										onclick="returnToListPage('prize','${queryParamCacheKey}','${gua.id}')"
+										onclick="returnToListPage('','${queryParamCacheKey}','${gua.id}')"
 										class="btn btn-primary">返回</button>
 									
 								</div>

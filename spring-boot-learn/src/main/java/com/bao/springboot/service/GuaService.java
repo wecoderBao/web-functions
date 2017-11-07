@@ -9,4 +9,6 @@ public interface GuaService {
 	boolean saveGua(TGua gua);
 	
 	List<TGua> guaList();
+	TGua guaDetail(Integer id);
+	void guaDelete(Integer id);
 }

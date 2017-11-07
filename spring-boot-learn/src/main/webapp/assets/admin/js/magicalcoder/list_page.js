@@ -88,13 +88,13 @@ function deleteItem(lowerEntity,id){
     if(!confirm("确定要删除？")){
         return
     }
-    $.getJSON("admin/"+lowerEntity+"/delete/"+id,{date:new Date().getTime()},function(data){
+    $.getJSON("gauDelete?id="+id,{date:new Date().getTime()},function(data){
         if(data.code ==0){
             alert("删除成功")
-            id = id+'';
-            if(id.indexOf("/")!=-1)//唯一键的表
-            id = id.replace("/","_");
-            $("#tr"+id).remove()
+//            id = id+'';
+//            if(id.indexOf("/")!=-1)//唯一键的表
+//            id = id.replace("/","_");
+//            $("#tr"+id).remove()
         }else{
             alert(data.message)
         }

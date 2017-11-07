@@ -38,4 +38,15 @@ public class GuaServiceImpl implements GuaService {
 		return guaList;
 	}
 
+	@Override
+	public TGua guaDetail(Integer id) {
+		
+		return tGuaMapper.selectByPrimaryKey(id);
+	}
+
+	@Override
+	public void guaDelete(Integer id) {
+		 tGuaMapper.deleteByPrimaryKey(id);
+	}
+
 }

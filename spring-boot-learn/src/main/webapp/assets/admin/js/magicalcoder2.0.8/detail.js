@@ -166,5 +166,5 @@ function findFormData($form){
 }
 //返回
 function returnToListPage(tableName,queryParamCacheKey,focusTrId) {
-    window.location.href = "admin/"+tableName+"/list"+"?queryParamCacheKey="+queryParamCacheKey+"&focusTrId="+focusTrId;
+    window.location.href = "guaList"+"?queryParamCacheKey="+queryParamCacheKey+"&focusTrId="+focusTrId;
 }
