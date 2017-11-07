@@ -28,13 +28,13 @@
 
 <div class="form-box" id="login-box">
     <div class="header">登录</div>
-    <form action="admin" method="post">
+    <form action="login" method="post">
         <div class="body bg-gray">
             <div class="form-group">
-                <input type="text" name="userName" class="form-control" placeholder="用户名" value="admin"/>
+                <input type="text" name="user" class="form-control" placeholder="用户名" value="admin"/>
             </div>
             <div class="form-group">
-                <input type="password" name="password" class="form-control" placeholder="密码" value="admin"/>
+                <input type="password" name="pwd" class="form-control" placeholder="密码" value="admin"/>
             </div>
             <div class="form-group">
                 <input type="text" name="checkCode" class="form-control" placeholder="验证码" value=""/>
@@ -59,7 +59,7 @@
 <script type="text/javascript">
     //刷新验证码
     function changeImg(obj){
-        document.getElementById(obj.id).src="admin/checkCode?d="+Math.random();
+       // document.getElementById(obj.id).src="admin/checkCode?d="+Math.random();
     }
 </script>
 </body>
