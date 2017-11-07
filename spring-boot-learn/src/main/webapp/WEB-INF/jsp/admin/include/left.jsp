@@ -16,10 +16,10 @@
     <ul class="sidebar-menu"  id="leftNavigate">
     		<li class="treeview">
                 <a href="#">
-                    <i class="fa fa-dashboard"></i> <span>测试模块</span> <i class="fa fa-angle-left pull-right"></i>
+                    <i class="fa fa-dashboard"></i> <span>gua模块</span> <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a id="moduleName1" href="#"><i class="fa fa-circle-o"></i> 模块名1</a></li>
+                    <li><a id="moduleName1" href="guaList"><i class="fa fa-circle-o"></i> gua表</a></li>
                     <li><a id="moduleName2" href="#"><i class="fa fa-circle-o"></i> 模块名2</a></li>
                     <li><a id="moduleName3" href="#"><i class="fa fa-circle-o"></i> 模块名3</a></li>
                 </ul>

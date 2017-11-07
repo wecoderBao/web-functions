@@ -22,15 +22,15 @@
 		<aside class="right-side">
 			<section class="content-header">
 				<h1>
-					gua列表
+					yao列表
 					<c:if test="${ 1==1}">
-						<a class="btn btn-app" href="/guaDetail?id=-1"><i
+						<a class="btn btn-app" href="/yaoDetail?guaCode=${guaCode }"><i
 							class="fa fa-edit"></i>新增</a>
 					</c:if>
 				</h1>
 				<ol class="breadcrumb">
 					<li><a href="index"><i class="fa fa-dashboard"></i> 主页</a></li>
-					<li class="active">gua列表</li>
+					<li class="active">yao列表</li>
 				</ol>
 			</section>
 			<!-- Main content -->
@@ -45,16 +45,16 @@
 											<div class="row">
 												<div class="col-xs-2">
 													<div class="form-group">
-														<label for="identifierFirst">gua代号 (=)</label> <input
-															type="text" class="form-control" value="${ code }"
+														<label for="identifierFirst">yaoci (=)</label> <input
+															type="text" class="form-control" value="${ yaoCi }"
 															required minLength="0" id="identifierFirst"
 															name="identifierFirst">
 													</div>
 												</div>
 												<div class="col-xs-2">
 													<div class="form-group">
-														<label for="nameFirst">gua名称 (like)</label> <input
-															type="text" class="form-control" value="${ guaName }"
+														<label for="nameFirst">yaoci名称 (like)</label> <input
+															type="text" class="form-control" value="${ yaoCiName }"
 															required minLength="0" id="nameFirst" name="nameFirst">
 													</div>
 												</div>
@@ -92,33 +92,29 @@
 											<th><input type="checkbox" id="checkAll"></th>
 											<th>序号</th>
 											<th class="sorting" orderField="identifier">gua代号</th>
-											<th class="sorting" orderField="huo_dong_id">guaci</th>
-											<th class="sorting" orderField="prize_root_id">gua名字</th>
-											<th class="sorting" orderField="name">gua模型</th>
-											<th class="sorting" orderField="end_time">guaci描述</th>
-											<th class="sorting" orderField="begin_time">guacixiang</th>
-											<th class="sorting" orderField="status">guacixiang描述</th>
+											<th class="sorting" orderField="huo_dong_id">yaoci</th>
+											<th class="sorting" orderField="prize_root_id">yaoci名字</th>
+											<th class="sorting" orderField="name">yaoci描述</th>
+											<th class="sorting" orderField="end_time">guacixiang</th>
+											<th class="sorting" orderField="begin_time">guacixiang描述</th>
 											<th>操作</th>
 										</tr>
 									</thead>
 									<tbody id="tbody">
-										<c:forEach items="${guaList}" var="gua" varStatus="status">
+										<c:forEach items="${yaoList}" var="yao" varStatus="status">
 											<tr>
 												<td></td>
 												<td align="center">${status.index+1}</td>
-												<td align="center">${gua.code}</td>
-												<td align="center">${gua.guaCi}</td>
-												<td align="center">${gua.guaName}</td>
-												<td align="center">${gua.guaModel}</td>
-												<td align="center">${gua.guaCiDesc}</td>
-												<td align="center">${gua.guaCiXiang}</td>
-												<td align="center">${gua.guaCiXiangDesc}</td>
+												<td align="center">${yao.guaCode}</td>
+												<td align="center">${yao.yaoCi}</td>
+												<td align="center">${yao.yaoCiName}</td>
+												<td align="center">${yao.yaoCiDesc}</td>
+												<td align="center">${yao.yaoCiXiang}</td>
+												<td align="center">${yao.yaoCiXiangDesc}</td>											
 												<td><a class="btn btn-sm btn-info"
-													href="/guaDetail?id=${gua.id}">编辑</a> <a
+													href="/yaoDetail?id=${yao.id}&guaCode=${yao.guaCode}">编辑</a> <a
 													class="btn btn-sm btn-danger" href="javascript:{}"
-													onclick="deleteGua(${gua.id})">删除</a>
-													<a class="btn btn-sm btn-info"
-													href="/yaoList?guaCode=${gua.id}">yao表</a>
+													onclick="deleteYao(${yao.id},${yao.guaCode} )">删除</a>
 												</td>
 											</tr>
 										</c:forEach>
@@ -142,13 +138,13 @@
 	<script src="assets/admin/app/prize/prizePaging.js"
 		type="text/javascript"></script>
 	<script type="text/javascript">
-		function deleteGua(id){
+		function deleteYao(id,guaCode){
 			if(!confirm("确定要删除？")){
 		        return
 		    }
-			var url = "/guaDelete?id="+id;
+			var url = "/yaoDelete?id="+id+"&guaCode="+guaCode;
 			$.get(url,function(data){
-				window.location.href="/guaList";
+				window.location.href="/yaoList?guaCode="+guaCode;
 			});
 		}
 		function resetDefaultValue() {

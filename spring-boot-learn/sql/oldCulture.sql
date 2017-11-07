@@ -15,7 +15,7 @@ create table t_gua(
 drop table if exists t_yao;
 create table t_yao(
 	id int(10) primary key auto_increment,
-	gua_code int(10) unique comment '外键，卦的标识',
+	gua_code int(10) comment '外键，卦的标识',
 	yao_ci varchar(20) comment '爻辞',
 	yao_ci_name varchar(50) comment '爻辞原文',
 	yao_ci_desc varchar(200) comment '爻辞白话',
