@@ -91,9 +91,8 @@
 									<div class="form-group ">
 										<label class="col-sm-1 control-label"> yaoci xiang </label>
 										<div class="col-sm-9">
-											<input type="text" class="form-control " name="yaoCiXiang"
-												title="yaoCiXiang" placeholder="请输入yaoci xiang" required
-												minLength="1"  value="${yao.yaoCiXiang}">
+											<textarea style="height:200px;"" class="form-control " name="yaoCiXiang"
+												title="yaoCiXiang" placeholder="请输入yaoci xiang" >${yao.yaoCiXiang}</textarea>
 										</div>										
 									</div>
 									<div class="form-group ">

@@ -123,10 +123,9 @@
 									<div class="form-group ">
 										<label class="col-sm-1 control-label"> guacixiang 描述 </label>
 										<div class="col-sm-9">
-											<input type="text" class="form-control " name="guaCiXiangDesc"
+											<textarea style="height:200px;" class="form-control " name="guaCiXiangDesc"
 												title="guacixiang描述"
-												placeholder="请输入guacixiang描述"												
-												value="${gua.guaCiXiangDesc}">
+												placeholder="请输入guacixiang描述"	>${gua.guaCiXiangDesc}</textarea>
 										</div>										
 									</div>	
 								</div>
