@@ -95,8 +95,8 @@
 											<th class="sorting" orderField="huo_dong_id">yaoci</th>
 											<th class="sorting" orderField="prize_root_id">yaoci名字</th>
 											<th class="sorting" orderField="name">yaoci描述</th>
-											<th class="sorting" orderField="end_time">guacixiang</th>
-											<th class="sorting" orderField="begin_time">guacixiang描述</th>
+											<th class="sorting" orderField="end_time">yaocixiang</th>
+											<th class="sorting" orderField="begin_time">yaocixiang描述</th>
 											<th>操作</th>
 										</tr>
 									</thead>

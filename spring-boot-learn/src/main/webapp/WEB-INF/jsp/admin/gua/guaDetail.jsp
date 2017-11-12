@@ -94,11 +94,11 @@
 											<input type="text" class="form-control " name="guaModel"
 												title="gua模型"
 												placeholder="请输入gua模型"
-												required minLength="1" maxLength="20"
+												required minLength="1" maxLength="200"
 												value="${gua.guaModel}">
 										</div>
 										<label class="col-sm-2 control-label"> <span
-											class="minLength">0</span><span class="maxLength">/20</span>
+											class="minLength">0</span><span class="maxLength">/200</span>
 											<span class="validateMsg"></span>
 										</label>
 									</div>
@@ -107,42 +107,27 @@
 										<div class="col-sm-9">
 											<input type="text" class="form-control " name="guaCiDesc"
 												title="guaci描述"
-												placeholder="请输入guaci描述"
-												required minLength="1" maxLength="20"
+												placeholder="请输入guaci描述"											
 												value="${gua.guaCiDesc}">
-										</div>
-										<label class="col-sm-2 control-label"> <span
-											class="minLength">0</span><span class="maxLength">/20</span>
-											<span class="validateMsg"></span>
-										</label>
+										</div>									
 									</div>
 									<div class="form-group ">
 										<label class="col-sm-1 control-label"> guaci xiang </label>
 										<div class="col-sm-9">
 											<input type="text" class="form-control " name="guaCiXiang"
 												title="guacixiang"
-												placeholder="请输入guacixiang"
-												required minLength="1" maxLength="200"
+												placeholder="请输入guacixiang"												
 												value="${gua.guaCiXiang}">
-										</div>
-										<label class="col-sm-2 control-label"> <span
-											class="minLength">0</span><span class="maxLength">/200</span>
-											<span class="validateMsg"></span>
-										</label>
+										</div>										
 									</div>
 									<div class="form-group ">
 										<label class="col-sm-1 control-label"> guacixiang 描述 </label>
 										<div class="col-sm-9">
 											<input type="text" class="form-control " name="guaCiXiangDesc"
 												title="guacixiang描述"
-												placeholder="请输入guacixiang描述"
-												required minLength="1" maxLength="200"
+												placeholder="请输入guacixiang描述"												
 												value="${gua.guaCiXiangDesc}">
-										</div>
-										<label class="col-sm-2 control-label"> <span
-											class="minLength">0</span><span class="maxLength">/200</span>
-											<span class="validateMsg"></span>
-										</label>
+										</div>										
 									</div>	
 								</div>
 								<!-- /.box-body -->

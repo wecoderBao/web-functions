@@ -93,12 +93,8 @@
 										<div class="col-sm-9">
 											<input type="text" class="form-control " name="yaoCiXiang"
 												title="yaoCiXiang" placeholder="请输入yaoci xiang" required
-												minLength="1" maxLength="200" value="${yao.yaoCiXiang}">
-										</div>
-										<label class="col-sm-2 control-label"> <span
-											class="minLength">0</span><span class="maxLength">/200</span>
-											<span class="validateMsg"></span>
-										</label>
+												minLength="1"  value="${yao.yaoCiXiang}">
+										</div>										
 									</div>
 									<div class="form-group ">
 										<label class="col-sm-1 control-label"> yaoci xiang 描述
@@ -107,12 +103,9 @@
 											<input type="text" class="form-control "
 												name="yaoCiXiangDesc" title="yaoci xiang描述"
 												placeholder="请输入yaoci xiang描述" required minLength="1"
-												maxLength="200" value="${yao.yaoCiXiangDesc}">
+											 value="${yao.yaoCiXiangDesc}">
 										</div>
-										<label class="col-sm-2 control-label"> <span
-											class="minLength">0</span><span class="maxLength">/200</span>
-											<span class="validateMsg"></span>
-										</label>
+										
 									</div>
 								</div>
 								<!-- /.box-body -->
