@@ -92,27 +92,18 @@
 										<label class="col-sm-1 control-label"> yaoci xiang </label>
 										<div class="col-sm-9">
 											<input type="text" class="form-control " name="yaoCiXiang"
-												title="yaoCiXiang" placeholder="请输入yaoci xiang" required
-												minLength="1" maxLength="200" value="${yao.yaoCiXiang}">
-										</div>
-										<label class="col-sm-2 control-label"> <span
-											class="minLength">0</span><span class="maxLength">/200</span>
-											<span class="validateMsg"></span>
-										</label>
+												title="yaoCiXiang" placeholder="请输入yaoci xiang" value="${yao.yaoCiXiang}">
+										</div>										
 									</div>
 									<div class="form-group ">
 										<label class="col-sm-1 control-label"> yaoci xiang 描述
 										</label>
 										<div class="col-sm-9">
-											<input type="text" class="form-control "
+											<textarea style="height:200px;" class="form-control "
 												name="yaoCiXiangDesc" title="yaoci xiang描述"
-												placeholder="请输入yaoci xiang描述" required minLength="1"
-												maxLength="200" value="${yao.yaoCiXiangDesc}">
+												placeholder="请输入yaoci xiang描述" >${yao.yaoCiXiangDesc}</textarea>
 										</div>
-										<label class="col-sm-2 control-label"> <span
-											class="minLength">0</span><span class="maxLength">/200</span>
-											<span class="validateMsg"></span>
-										</label>
+										
 									</div>
 								</div>
 								<!-- /.box-body -->
