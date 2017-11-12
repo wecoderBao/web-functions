@@ -91,18 +91,17 @@
 									<div class="form-group ">
 										<label class="col-sm-1 control-label"> yaoci xiang </label>
 										<div class="col-sm-9">
-											<textarea style="height:200px;"" class="form-control " name="yaoCiXiang"
-												title="yaoCiXiang" placeholder="请输入yaoci xiang" >${yao.yaoCiXiang}</textarea>
+											<input type="text" class="form-control " name="yaoCiXiang"
+												title="yaoCiXiang" placeholder="请输入yaoci xiang" value="${yao.yaoCiXiang}">
 										</div>										
 									</div>
 									<div class="form-group ">
 										<label class="col-sm-1 control-label"> yaoci xiang 描述
 										</label>
 										<div class="col-sm-9">
-											<input type="text" class="form-control "
+											<textarea style="height:200px;" class="form-control "
 												name="yaoCiXiangDesc" title="yaoci xiang描述"
-												placeholder="请输入yaoci xiang描述" required minLength="1"
-											 value="${yao.yaoCiXiangDesc}">
+												placeholder="请输入yaoci xiang描述" >${yao.yaoCiXiangDesc}</textarea>
 										</div>
 										
 									</div>
