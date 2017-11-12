@@ -20,7 +20,7 @@ public class GuaServiceImpl implements GuaService {
 	public boolean saveGua(TGua gua) {
 		TGuaExample example = new TGuaExample();
 		TGuaExample.Criteria criteria = example.createCriteria();
-		criteria.andCodeEqualTo(gua.getCode());
+		criteria.andIdEqualTo(gua.getId());
 		List<TGua> guaList = tGuaMapper.selectByExample(example);
 		if(guaList.size() > 0) {
 			TGua oldGua = guaList.get(0);
