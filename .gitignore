@@ -12,3 +12,4 @@ web-role-admin/WebContent/WEB-INF/classes
 web-role-admin/.settings/
 
 *.class
+*/.settings/*
