@@ -4,7 +4,7 @@ use oldCulture;
 drop table if exists t_gua;
 create table t_gua(
 	id int(10) primary key auto_increment,
-	code int(10) comment '卦代码',
+	code int(10) unique comment '卦代码',
 	gua_ci varchar(200) comment '卦辞',
 	gua_name varchar(200) comment '卦名称',
 	gua_model varchar(200) comment '卦辞原文',

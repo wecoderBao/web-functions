@@ -54,7 +54,7 @@
 										<label class="col-sm-1 control-label"> gua代号 </label>
 										<div class="col-sm-3 input-select">
 											<input type="text" class="form-control" name="default"
-												disabled="disabled" value="${guaCode }" />
+												disabled="disabled" value="${realGuaCode }" />
 										</div>
 
 									</div>

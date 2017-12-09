@@ -105,7 +105,7 @@
 											<tr>
 												<td></td>
 												<td align="center">${status.index+1}</td>
-												<td align="center">${yao.guaCode}</td>
+												<td align="center">${realGuaCode }</td>
 												<td align="center">${yao.yaoCi}</td>
 												<td align="center">${yao.yaoCiName}</td>
 												<td align="center">${yao.yaoCiDesc}</td>
