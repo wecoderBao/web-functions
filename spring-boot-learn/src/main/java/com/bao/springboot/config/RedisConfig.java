@@ -18,8 +18,13 @@ import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-//@Configuration
-//@EnableCaching
+/**
+ * redis 的java文件配置方式
+ * @author sunbao
+ *
+ */
+@Configuration
+@EnableCaching
 public class RedisConfig extends CachingConfigurerSupport{
 
 	/**
@@ -44,7 +49,7 @@ public class RedisConfig extends CachingConfigurerSupport{
 	 * 管理缓存
 	 */
 	@Bean
-	public CacheManager cacheManager(RedisTemplate redisTemplate) {
+	public CacheManager cacheManager(RedisTemplate<String,String> redisTemplate) {
 		RedisCacheManager rcm = new RedisCacheManager(redisTemplate);
 		return rcm;
 	}
