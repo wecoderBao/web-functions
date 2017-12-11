@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.bao.springboot.mapper.TGuaMapper;
 import com.bao.springboot.pojo.TYao;
 import com.bao.springboot.service.YaoService;
 
@@ -21,6 +22,8 @@ public class YaoController {
 
 	@Autowired
 	YaoService yaoService;
+	@Autowired
+	TGuaMapper tGuaMapper;
 
 	/**
 	 * 记录详情
@@ -33,6 +36,8 @@ public class YaoController {
 		}
 		model.addAttribute("yao", yao);
 		model.addAttribute("guaCode", guaCode);
+		Integer realGuaCode = tGuaMapper.selectByPrimaryKey(guaCode).getCode();
+		model.addAttribute("realGuaCode", realGuaCode);
 
 		return "yao/yaoDetail";
 	}
@@ -45,10 +50,13 @@ public class YaoController {
 	 * @return
 	 */
 	@RequestMapping(value = "/yaoList", method = RequestMethod.GET)
-	public String yaoList(HttpServletRequest request, ModelMap model, @RequestParam Integer guaCode) {
+	public String yaoList(@RequestParam Integer guaCode, ModelMap model) {
+		//guaCode是gua的id
 		List<TYao> yaoList = yaoService.yaoListByGuaCode(guaCode);
 		model.addAttribute("yaoList", yaoList);
 		model.addAttribute("guaCode", guaCode);
+		Integer realGuaCode = tGuaMapper.selectByPrimaryKey(guaCode).getCode();
+		model.addAttribute("realGuaCode", realGuaCode);
 		return "yao/yaoList";
 	}
 
