@@ -23,8 +23,13 @@ public class PageServlet extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
-
+		/**
+		 * 查询数据列表
+		 */
 		ArrayList<Book> bookList = new ArrayList<Book>();
+		/**
+		 * 查询记录总数
+		 */
 		int totalCount = 100;
 		int currPage = 1;
 		int pageSize = 10;
