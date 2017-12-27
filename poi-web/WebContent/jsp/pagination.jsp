@@ -11,6 +11,11 @@
 		<font size="5"> 那些年一起追过的小说 </font>
 	</div>
 	<br />
+	<label>导出</label>
+	<input type="text" name="start" id="start" placeholder="起始位置"/> 
+	<input type="text" name="limit" id="limit" placeholder="结束位置"/>
+	<input type="button" onclick="exportFile('excel')" value="EXCEL导出"/>
+	<br />
 	<table border="1" width="100%">
 		<tr>
 			<td>单号</td>
@@ -61,5 +66,16 @@
 				href="${pageContext.request.contextPath }/home?page=${page.currPage+1}">下一页</a>
 		</c:if>
 	</div>
+	<script>
+		//导出文件
+		function exportFile(exportFile) {
+			//var start = $("#start").val()
+			//var limit = $("#limit").val()
+			var url = 'admin/refresh/export/' + exportFile + '/'
+					+ start + '/' + limit;
+			//window.location.href = url + '?' + buildUrlParam(buildReqParam());
+			window.location.href = "/poi/export2007";
+		}
+	</script>
 </body>
 </html>
