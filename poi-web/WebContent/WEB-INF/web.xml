@@ -52,4 +52,13 @@
 		<servlet-name>template</servlet-name>
 		<url-pattern>/template</url-pattern>
 	</servlet-mapping>
+	<!-- 分页 servlet -->
+	<servlet>
+		<servlet-name>pagination</servlet-name>
+		<servlet-class>com.bao.page.controller.PageServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>pagination</servlet-name>
+		<url-pattern>/pagination</url-pattern>
+	</servlet-mapping>
 </web-app>
