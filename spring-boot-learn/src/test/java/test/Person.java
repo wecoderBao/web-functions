@@ -10,13 +10,14 @@ import org.springframework.beans.factory.config.BeanPostProcessor;
 
 public class Person implements BeanNameAware, BeanFactoryAware, InitializingBean, DisposableBean {
 
-	private String name;
+	private String name = "heiehi";
 
 	private BeanFactory beanFacotry;
 	private String beanName;
 
 	public Person() {
-		System.out.println("构造器，实例化");
+		System.out.println("构造器，实例化 === "+this.name);
+		this.name = "construct";
 	}
 
 	public String getName() {
@@ -53,6 +54,7 @@ public class Person implements BeanNameAware, BeanFactoryAware, InitializingBean
 		System.out.println("init-method指定的初始化方法");
 	}
 
+	//DisposableBean接口方法
 	@Override
 	public void destroy() throws Exception {
 		// TODO Auto-generated method stub
@@ -69,4 +71,7 @@ public class Person implements BeanNameAware, BeanFactoryAware, InitializingBean
 		return "Person [name=" + name + "]";
 	}
 
+	public void say() {
+		System.out.println("say===="+this.name);
+	}
 }

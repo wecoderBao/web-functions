@@ -16,25 +16,33 @@ public class MyInstantiationAwareBeanPostProcessor extends InstantiationAwareBea
 	
 	public MyInstantiationAwareBeanPostProcessor() {
 		super();
+		System.out.println();
 		System.out.println("InstantiationAwareBeanPostProcessorAdapter实现类构造器");
+		System.out.println();
 	}
 	//接口方法、实例化bean之前调用
 	@Override
 	public Object postProcessBeforeInstantiation(Class beanClass, String beanName) throws BeansException{
+		System.out.println();
 		System.out.println("InstantiationAwareBeanPostProcessor调用postProcessBeforeInstantiation方法");
+		System.out.println();
 		return null;
 	}
 	//接口方法、实例化bean之后调用
 	@Override
 	public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException{
+		System.out.println();
 		System.out.println("InstantiationAwareBeanPostProcessor调用postProcessAfterInitialization方法");
+		System.out.println();
 		return bean;
 	}
 	//接口方法、设置某个属性时调用
 	@Override
 	public PropertyValues postProcessPropertyValues(PropertyValues pvs, PropertyDescriptor[] pds, Object bean, String beanName)
 	throws BeansException{
-		System.out.println("InstantiationAwareBeanPostProcessor调用postProcessPropertyValues方法");
+		System.out.println();
+		System.out.println("InstantiationAwareBeanPostProcessor调用postProcessPropertyValues方法*********");
+		System.out.println();
 		return pvs;
 	}
 }
