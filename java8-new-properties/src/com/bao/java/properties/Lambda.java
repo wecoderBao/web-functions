@@ -5,18 +5,18 @@ import java.util.List;
 
 public class Lambda {
 	public static void main(String[] args) {
-		//ÍÆ²â²ÎÊýÀàÐÍ
+		//æŽ¨æµ‹å‚æ•°ç±»åž‹
 		Arrays.asList("a","b").forEach(e -> System.out.println(e));
-		//Ö¸¶¨²ÎÊýÀàÐÍ
+		//æŒ‡å®šå‚æ•°ç±»åž‹
 		Arrays.asList("c","d").forEach((String e) -> System.out.println(e));
-		//lambdaº¯ÊýÌå¸´ÔÓ£¬¿ÉÒÔ·Åµ½Ò»¶Ô»¨À¨ºÅÖÐ
+		//lambdaå‡½æ•°ä½“å¤æ‚ï¼Œå¯ä»¥æ”¾åˆ°ä¸€å¯¹èŠ±æ‹¬å·ä¸­
 		Arrays.asList(1,2,3).forEach(e -> {
 			System.out.println(e);
 			System.out.println(e+1);
 		});
 		/**
-		 * lambda¿ÉÄÜ»á·µ»ØÒ»¸öÖµ¡£·µ»ØÖµµÄÀàÐÍÓÉ±àÒëÆ÷ÍÆ²â³öÀ´¡£Èç¹ûlambdaµÄº¯ÊýÌåÖ»ÓÐÒ»ÐÐµÄ»°
-		 * ÄÇÃ´Ã»ÓÐ±ØÒªÏÔÊ¾Ê¹ÓÃreturnÓï¾ä¡£ÏÂÃæÁ½¶Î´úÂëµÈ¼Û
+		 * lambdaå¯èƒ½ä¼šè¿”å›žä¸€ä¸ªå€¼ã€‚è¿”å›žå€¼çš„ç±»åž‹ç”±ç¼–è¯‘å™¨æŽ¨æµ‹å‡ºæ¥ã€‚å¦‚æžœlambdaçš„å‡½æ•°ä½“åªæœ‰ä¸€è¡Œçš„è¯
+		 * é‚£ä¹ˆæ²¡æœ‰å¿…è¦æ˜¾ç¤ºä½¿ç”¨returnè¯­å¥ã€‚ä¸‹é¢ä¸¤æ®µä»£ç ç­‰ä»·
 		 */
 		Arrays.asList("a","b","d").sort((String e1, String e2) -> e1.compareTo(e2));
 		

@@ -1,14 +1,27 @@
 package com.bao.java.properties;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
- *1.lambda±í´ïÊ½Óëfunctional½Ó¿Ú
+ *1.lambdaè¡¨è¾¾å¼ä¸functionalæ¥å£
  *
- * 2.½Ó¿ÚµÄÄ¬ÈÏ·½·¨Óë¾²Ì¬·½·¨
+ * 2.æ¥å£çš„é»˜è®¤æ–¹æ³•ä¸é™æ€æ–¹æ³•
  * 
- * 3.·½·¨ÒıÓÃ ¿ÉÒÔÖ±½ÓÒıÓÃÒÑÓĞjavaÀà»ò¶ÔÏóµÄ·½·¨»ò¹¹ÔìÆ÷¡£Óë
- * lambdaÁªºÏÊ¹ÓÃ£¬·½·¨ÒıÓÃ¿ÉÒÔÊ¹ÓïÑÔµÄ¹¹Ôì¸ü½ô´Õ¼ò½à£¬¼õÉÙÈßÓà´úÂë¡£
+ * 3.æ–¹æ³•å¼•ç”¨ å¯ä»¥ç›´æ¥å¼•ç”¨å·²æœ‰javaç±»æˆ–å¯¹è±¡çš„æ–¹æ³•æˆ–æ„é€ å™¨ã€‚ä¸
+ * lambdaè”åˆä½¿ç”¨ï¼Œæ–¹æ³•å¼•ç”¨å¯ä»¥ä½¿è¯­è¨€çš„æ„é€ æ›´ç´§å‡‘ç®€æ´ï¼Œå‡å°‘å†—ä½™ä»£ç ã€‚
  *
  *
  */
 public class Begin {
+	private static final Pattern URL_LINK_PATTERN = Pattern.compile("([hH][tT]{2}[pP]://|[hH][tT]{2}[pP][sS]://)(([A-Za-z0-9-~]+)\\.)+([A-Za-z0-9-:~/?=&#_.+%])+");
 
+	public static void main(String[] args) {
+		String content = "https://music.163.com/#/playlist?id=47122508";
+		Matcher urlMatcher1 = URL_LINK_PATTERN.matcher(content);
+        
+        while (urlMatcher1.find()) {
+            System.out.println("hh");
+        }
+	}
 }
